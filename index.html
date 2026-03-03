@@ -6,104 +6,124 @@
     <title>FabricFantasy | Ladies Fashion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
-
-<!-- Header -->
 <header>
-    <div class="logo">FabricFantasy</div>
+    <a class="logo" href="index.html">
+        <span class="logo-mark">FF</span>
+        <span>
+            FabricFantasy
+            <small>Style made effortless</small>
+        </span>
+    </a>
 
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <button class="menu-icon" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
 
     <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="#categories">Categories</a>
         <a href="#shop">Shop</a>
-        <!-- <a href="#reviews">Reviews</a> -->
         <a href="#contact">Contact</a>
-        <a href="cart.html" class="cart">
-            <i class="fa fa-shopping-cart  fa-lg" ></i>
+        <a href="cart.html" class="cart" aria-label="Open cart">
+            <i class="fa fa-shopping-cart fa-lg"></i>
             <span id="cart-count">0</span>
         </a>
     </nav>
 </header>
-<!-- Products FIRST (Phone users see this immediately) -->
-<section class="products" id="shop">
-    <div class="product-grid" id="productGrid"></div>
-</section>
 
-
-<!-- Featured Banner THIRD -->
-<section class="banner">
-    <h2>Festive Sale</h2>
-    <p>Up to 40% OFF on selected items</p>
-</section>
-
-<!-- Hero LAST (Brand message, optional scroll-back) -->
-<section class="hero">
-    <h1>Elegance for Every Woman</h1>
-    <p>Premium ladies wear crafted with love</p>
-    <button onclick="scrollToShop()">Explore Collection</button>
-</section>
-
-
-<!-- Testimonials -->
-<!-- <section class="reviews" id="reviews">
-    <h2>What Our Customers Say</h2>
-    <div class="review-grid">
-        <div class="review">
-            ⭐⭐⭐⭐⭐
-            <p>Beautiful quality and fast delivery!</p>
-            <span>- Anjali</span>
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">New festive arrivals</p>
+            <h1>Elegant everyday wear for modern women.</h1>
+            <p>From breezy cotton kurtis to celebration-ready dresses, discover curated fashion that fits your day and your vibe.</p>
+            <div class="hero-actions">
+                <button onclick="scrollToShop()">Shop collection</button>
+                <a href="#categories" class="ghost-btn">Browse categories</a>
+            </div>
+            <div class="hero-metrics">
+                <article><strong>2500+</strong><span>Happy customers</span></article>
+                <article><strong>48h</strong><span>Fast dispatch</span></article>
+                <article><strong>4.8/5</strong><span>Average rating</span></article>
+            </div>
         </div>
-        <div class="review">
-            ⭐⭐⭐⭐☆
-            <p>Elegant designs, loved the fabric.</p>
-            <span>- Priya</span>
+    </section>
+
+    <section class="trust-strip">
+        <div><i class="fa fa-truck"></i> Free shipping over ₹1499</div>
+        <div><i class="fa fa-refresh"></i> Easy 7-day exchange</div>
+        <div><i class="fa fa-lock"></i> Secure checkout</div>
+    </section>
+
+    <section class="products" id="shop">
+        <div class="section-heading">
+            <h2>Shop trending styles</h2>
+            <p>Filter by mood, search by name, and quickly add to cart.</p>
         </div>
-    </div>
-</section> -->
-<!-- Categories SECOND -->
-<section class="categories" id="categories">
-    <h2>Shop by Category</h2>
-    <div class="category-grid">
-        <div class="category">Dresses</div>
-        <div class="category">Kurtis</div>
-        <div class="category">Sarees</div>
-        <div class="category">Ethnic Wear</div>
-    </div>
-</section>
 
+        <div class="shop-toolbar">
+            <input type="search" id="searchInput" placeholder="Search dresses, kurtis, sarees..." aria-label="Search products">
+            <select id="sortSelect" aria-label="Sort products">
+                <option value="default">Sort: Recommended</option>
+                <option value="priceLow">Price: Low to high</option>
+                <option value="priceHigh">Price: High to low</option>
+                <option value="nameAZ">Name: A to Z</option>
+            </select>
+        </div>
 
-<!-- Newsletter -->
-<section class="newsletter" id="contact">
-    <h2>Join FabricFantasy</h2>
-    <p>Get exclusive offers & updates</p>
-    <input type="email" placeholder="Enter your email">
-    <button>Subscribe</button>
-</section>
+        <div class="category-filters" id="categoryFilters"></div>
+        <div class="product-grid" id="productGrid"></div>
+    </section>
 
+    <section class="categories" id="categories">
+        <div class="section-heading">
+            <h2>Shop by category</h2>
+            <p>Pick your look in one tap.</p>
+        </div>
+        <div class="category-grid">
+            <a class="category" href="#shop" data-category="Dresses">
+                <i class="fa fa-diamond"></i>
+                <span>Dresses</span>
+            </a>
+            <a class="category" href="#shop" data-category="Kurtis">
+                <i class="fa fa-diamond"></i>
+                <span>Kurtis</span>
+            </a>
+            <a class="category" href="#shop" data-category="Sarees">
+                <i class="fa fa-diamond"></i>
+                <span>Sarees</span>
+            </a>
+            <a class="category" href="#shop" data-category="Ethnic Wear">
+                <i class="fa fa-diamond"></i>
+                <span>Ethnic Wear</span>
+            </a>
+        </div>
+    </section>
 
+    <section class="newsletter" id="contact">
+        <h2>Join FabricFantasy</h2>
+        <p>Get first access to launches, festive offers, and styling tips.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+</main>
 
-<!-- Footer -->
 <footer>
     <p>© 2025 FabricFantasy | All Rights Reserved</p>
 </footer>
+
 <a href="cart.html" class="floating-checkout" aria-label="View Cart">
     <i class="fa fa-shopping-cart"></i>
     <span class="floating-cart-count">0</span>
 </a>
 
-
-
 <script src="script.js"></script>
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
-		// Your function to run after the DOM is ready
-		loadProducts();
-	});
+    document.addEventListener('DOMContentLoaded', function () {
+        loadProducts();
+    });
 </script>
 </body>
 </html>
-
