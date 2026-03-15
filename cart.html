@@ -231,7 +231,7 @@ function payNow() {
 			const orderInfo = {
 				amount: total * 100, // paise
 				currency: "INR",
-				name: "FabricFantasy",
+				name: "{{ site.name }}",
 				description: "Order Payment",
 				order_id: order.id,
 			};
